@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ block.super }} | Tags {% endblock %}
+{% block content %}
+<section id="posts">
+    <div class="row ">
+        {% for post in posts %}
+   		<div class="col-six">
+            <div class="cardz">
+                <h3><a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></h3>
+                <a href="{{ post.get_absolute_url }}"><img src="{{ post.pic.url }}" alt="{{ post.title }}"></a>
+
+
+            </div>
+   		</div>
+        {% endfor %}
+   	</div> <!-- /section-intro -->
+</section>
+{% endblock %}

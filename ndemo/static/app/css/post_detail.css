@@ -1,0 +1,23 @@
+body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+.navbar-wrapper .navbar ul li a{
+        color:#141414;
+}
+.container{
+    width:100%;
+}
+.row{
+    max-width: 100%;
+	margin: 0 auto;
+}
+.col-md-8{
+    width:84%;
+
+}
+.col-md-2{
+    width:16%;
+}

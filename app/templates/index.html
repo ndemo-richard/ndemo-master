@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | Developer {% endblock %}
+{% block content %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/main.css' %}">
+{% endcompress %}
+
+<section id="intro">
+    <div class="intro-overlay"></div>
+    <div class="header-video">
+        <img src="{% static 'app/img/masthead.jpg' %}"
+             class="header-video__media"
+             data-video-URL="https://player.vimeo.com/video/358812209"
+             data-teaser="{% static 'app/video/teaser-video' %}"
+             data-video-width="560"
+             data-video-height="315" alt="#191919">
+        <div class="row">
+            <div class="col-twelve">
+                <p class="intro-position">
+                    <span>~i am here to create a lasting relationship with you~</span>
+                </p>
+                <h1> Ndemo Richard</h1>
+                <p class="lead">
+                    <span>~ There are a lot i have to share with you</span>
+                </p>
+        </div>
+        </div>
+        <a href="https://www.youtube.com/embed/Scxs7L0vhZ4" type="video/mp4" class="header-video__play-trigger" id="header-video__play-trigger">Watch video</a>
+        <button type="button" class="header-video__close-trigger" id="header-video__close-trigger"> X </button>
+    </div>
+</section>
+
+<section id="resume-intro">
+<div class="resume-intro">
+    <h1>Software Development </h1>
+    <p class="resume-content">
+    You need a good website that looks amazing and actually works .That's my specialty. If you want to learn more about me and want to work with me , give me a call or email me.
+    </p>
+    <p class="resume-link">
+       <a href="{% url 'home' %}">Checkout my full resume !</a>
+    </p>
+</div>
+</section>
+<section id="codehub-intro">
+    <div class="codehub-intro">
+        <h1>I create quality code snippets,plugins,and other hacks.</h1>
+        <div class="codehub-content">
+            <div class="codehub-section">
+                <span class="icon"><i class="icon-window"></i> </span>
+                <h1>Snippets</h1>
+                <p>There are exclusive for python lovers and will offer custom design options with easy to understand instructions.</p>
+            </div>
+            <div class="codehub-section">
+               <span class="icon"><i class="icon-plug"></i> </span>
+                <h1>Plugins</h1>
+                <p>The plugins will provide my best products that i have been creating over the years</p>
+            </div>
+            <div class="codehub-section">
+                <span class="icon"><i class="icon-objects"></i> </span>
+                <h1>Hacks</h1>
+                <p>Learn from my mistake and let me show you how to accomplish unique sections of your product that will impress.</p>
+            </div>
+        </div>
+      <a href="{% url 'codehub' %}"class="button">CodeHub space</a>
+    </div>
+
+</section>
+<section id="portfolio-intro">
+    <div class="portfolio-intro">
+        <h1>My Latest projects</h1>
+        <div class="main">
+            <div class="section">
+                <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+                <div class="descriptions">
+                   <p>pharmacy website</p>
+                    <h1>Panaceameds</h1>
+                    <button class="button">View Project</button>
+                </div>
+            </div>
+            <div class="section">
+               <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+                <div class="descriptions">
+                    <p>Personal website</p>
+                    <h1>Richard ndemo</h1>
+                    <button class="button">View Project</button>
+                </div>
+            </div>
+            <div class="section">
+               <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+                <div class="descriptions">
+                    <p>card sharing</p>
+                    <h1>card site</h1>
+                    <button class="button">View Project</button>
+                </div>
+            </div>
+        </div>
+        <p class="portfolio_button"><a href="{% url 'home' %}"class="button">View More Projects</a> </p>
+
+    </div>
+
+</section>
+<section id="vlog-intro">
+    <div class="vlog-intro">
+        <h1>My journey as a software developer</h1>
+        <p class="vlog-lead">
+            I'd like to share with everyone a passion project that i have been wanting to share as I face these challenges head-on.
+            "My journey as a software developer" will be a weekly vlog series documenting my journey as i grow and horn my skills in the field of software development.
+            Subscribe to my youtube channel and follow me as I journey through this new and exciting challenge.
+        </p>
+        <div class="vlog-overlay"></div>
+    <div class="vlog-video">
+        <div class="vimage">
+         <a href="https://player.vimeo.com/video/358812209" class="vlog_bt" data-lity ><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+            </div>
+    </div>
+
+    </div>
+    </div>
+
+</section>
+<section id="contact-intro">
+    <div class="contact-overlay"></div>
+    <div class="contact-intro">
+        <div class="row">
+            <div class="col-twelve">
+                <p class="contact-position">
+                    <span>having a problem and need solutions from an expert?</span>
+                </p>
+                <h1>Hire a software Developer Today</h1>
+                <p class="contact_button"><a href="{% url 'home' %}"class="button">Contact Me Now</a> </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section id="about-intro">
+    <div class="about-intro">
+        <h1>My life as a developer</h1>
+        <div class="about-content">
+            {% for postimage in postimages %}
+            <div class="cardz">
+                <img src="{{ postimage.image.url }}" alt="{{ PostIMage.title }}" height="250" width="100">
+
+            </div>
+            {% endfor %}
+        </div>
+         <p class="about_button"><a href="{% url 'home' %}"class="button">Learn More about me</a> </p>
+    </div>
+
+</section>
+<section id="blog-intro">
+    <div class="blog-intro">
+        <h1>My latest blog posts</h1>
+        <div class="blog-content">
+            {% for post in post_list %}
+            <div class="g-card">
+                <div class="card-image">
+                    <a href="{% url 'post_detail' post.slug  %}" target="_blank">
+                        <img src="{{ post.pic.url }}" alt="{{ post.title }}" height="400" width="100%">
+                    </a>
+                </div>
+                <h4 class="title"><a href="{% url 'post_detail' post.slug  %}" target="_blank"> {{ post.title }}</a></h4>
+                <span class="publisher">{{ post.author  }} | {{ post.created_on|date:"D M Y" }}</span>
+            </div>
+            {% endfor %}
+
+        </div>
+         <p class="blog_button"><a href="{% url 'blog' %}" target="_blank" class="button">View my posts</a> </p>
+    </div>
+
+</section>
+{% endblock %}

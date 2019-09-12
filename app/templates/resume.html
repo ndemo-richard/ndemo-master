@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | Resume {% endblock %}
+{% block content %}
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/resume.css' %}">
+{% endcompress %}
+<section id="intro">
+     <div class="intro-overlay"></div>
+    <div class="intro-content">
+        <div class="row">
+            <div class="col-twelve">
+                <p class="intro-position">
+                    <span>~Check out what I have been doing~</span>
+                </p>
+                <h1> Dig a little deeper</h1>
+        </div>
+        </div>
+        <div class="row button-section">
+            <div class="col-twelve">
+                <a href="{% static 'app/ndemorich.pdf' %}" title="Resume" class="button stroke">Download Resume</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'include/skills.html' %}
+<section id="hireme">
+    <div class="hireme">
+        <div class="hireme-content">
+        <div class="row">
+            <div class="col-twelve">
+                <h1>Hire an  expert today</h1>
+                <p class="hireme-position">
+                    <span>Now that you know what I've done and what I could do for you, feel free to reach out and start a conversation. I always enjoy speaking with passionate business owners about their needs.</span>
+                </p>
+        </div>
+        </div>
+        <div class="row button-section">
+            <div class="col-twelve">
+                <a href="{% static 'app/' %}" title="contact" class="button stroke">Contact Me Today</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}
