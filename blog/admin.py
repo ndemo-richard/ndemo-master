@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post, Imagee
+from blog.models import Post,Imagee
 
 admin.site.site_header = 'Ndemo Richard django Panel'
 
@@ -16,6 +16,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+
 
 
 class ImageAdmin(admin.ModelAdmin):

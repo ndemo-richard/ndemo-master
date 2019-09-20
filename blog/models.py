@@ -19,6 +19,7 @@ class Post(models.Model):
     content = HTMLField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
     tags = TaggableManager()
 
     class Meta:
@@ -29,7 +30,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return "blog/%s/" % self.slug
-
 
 # test --
 class Imagee(models.Model):

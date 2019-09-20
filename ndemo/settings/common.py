@@ -41,9 +41,17 @@ INSTALLED_APPS = [
     'blog',
     'compressor',
     'taggit',
-    'bootstrap4'
+    'bootstrap4',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django_comments',
+    'mptt',
+    'tagging',
+    'zinnia',
+
 ]
 
+SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'zinnia.context_processors.version', #optional
             ],
         },
     },
@@ -103,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
