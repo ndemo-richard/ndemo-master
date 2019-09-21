@@ -9,7 +9,7 @@ class ZinniaConfig(AppConfig):
     """
     name = 'zinnia'
     label = 'zinnia'
-    verbose_name = _('Weblog')
+    verbose_name = _('blog')
 
     def ready(self):
         from django_comments.moderation import moderator
