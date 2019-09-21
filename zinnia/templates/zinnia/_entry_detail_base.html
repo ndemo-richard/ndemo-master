@@ -98,7 +98,7 @@
       <a href="{{ object.get_absolute_url }}"
          title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
          rel="bookmark" itemprop="url">
-        {% trans "Continue reading" %}
+        {% trans "Read article" %}
       </a>
     </p>
     {% endif %}

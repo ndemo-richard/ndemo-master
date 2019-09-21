@@ -22,13 +22,13 @@
     {% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
   </head>
-  <body class="zinnia">
+  <body class="zinnia" id="top">
     <div class="container">
       <header id="header" role="banner">
         <nav>
           <ul class="top-navigation">
              <li class="home">
-              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Home" %}" class="sitemap" rel="sitemap">
+              <a href="https://www.ndemorichard.com/" title="{% trans "Home" %}">
                 {% trans "Home" %}
               </a>
             </li>
@@ -52,7 +52,7 @@
         </form>
         <h1>
           <a href="{% url 'zinnia:entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
-            Welcome
+            Welcome To My Blog
           </a>
         </h1>
         <blockquote>
@@ -89,7 +89,7 @@
         {% endblock sidebar %}
       </div>
       <footer id="footer" role="contentinfo">
-        <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Designed by <a href="http://www.ndemorichard.com">Richard Ndemo</a>.{% endblocktrans %}</p>
       </footer>
     </div>
   </body>

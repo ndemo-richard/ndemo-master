@@ -20,18 +20,19 @@
 {% endblock link %}
 
 {% block breadcrumbs %}
-  {% trans "Blog" as root_name %}
+  {% trans "Home" as root_name %}
   {% zinnia_breadcrumbs root_name %}
 {% endblock breadcrumbs %}
 
 {% block sidebar %}
 <aside id="widget-welcome" class="widget">
-  <h3>{% trans "Welcome!" %}</h3>
+  <h3>{% trans "About" %}</h3>
   <p>
-    {% trans "This simple theme is the default appearance of Zinnia." %}
+    {% trans "I am an open source enthusiastic " %}
+
   </p>
   <p>
-    {% trans "Don't hesitate to override the template <strong>zinnia/base.html</strong> to start <a href='http://docs.django-blog-zinnia.com/en/latest/how-to/customize_look_and_feel.html'>customizing your Weblog</a>." %}
+    {% trans "Don't hesitate to check out who I am <a href='https://www.ndemorichard.com/resume/'><strong>Professionally</strong></a>." %}
   </p>
 </aside>
 <aside id="widget-categories" class="widget">

@@ -1,3 +1,19 @@
+/* some stuff for webpage scrollbar */
+::-webkit-scrollbar {
+    width: 1.5em;
+    background-color:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(0deg, rgba(233,195,36,0.938813025210084) 0%, rgba(246,4,25,1) 100%);
+    border-radius:25px;
+}
+::-webkit-scrollbar-track {
+    -box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+    background-color: transparent;
+    width:2em;
+}
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -51,7 +67,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   .zinnia h3 {
     font-size: 1.5em;
     line-height: 1;
-    color:#dbd7d7;
+    color:black;
     margin-bottom: 1.00em; }
   .zinnia h4 {
     font-size: 1.2em;
@@ -66,11 +82,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     font-weight: bold; }
   .zinnia p {
     margin: 0 0 1.5em;
-     color:#dbd7d7;
+     color:#292f33;
      }
   .zinnia a {
     text-decoration: none;
-     color:#dbd7d7;
+      color: #0000FF; ;
      }
     .zinnia a:hover {
       text-decoration: none;
@@ -129,10 +145,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     cursor: help; }
   .zinnia li p {
     margin: 0; }
-
+.zinnia form{
+background-color:#100e17;
+}
 .zinnia form label {
   display: block;
-  font-weight: bold; }
+  font-weight: bold;
+  color:#ebe4e4;}
 
 .zinnia form fieldset {
   padding: 1.4em;
@@ -140,17 +159,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .zinnia form legend {
   font-weight: bold;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color:#ebe4e4;}
 
 .zinnia form input[type=email], .zinnia form input[type=url], .zinnia form input[type=text], .zinnia form input[type=password] {
   margin: 0.5em 0;
   width: 50%;
+  background-color:#474552;
   padding: 0.5em; }
 
 .zinnia form textarea {
   margin: 0.5em 0;
   padding: 0.5em;
   width: 70%;
+   background-color:#474552;
   height: 300px; }
 
 .zinnia form select {
@@ -170,9 +192,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-    background-color:#17141d;
+    background-color:#fcfcfc;
   background-origin: content-box;
   background-clip: content-box;
+  border:none;
   }
   .zinnia .container:after {
     content: "";
@@ -190,7 +213,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     float: left;
     margin-right: 1.16279%; }
   .zinnia #sidebar, .zinnia.right-sidebar #sidebar {
-    width: 32.94574%;
+    width: 28%;
     float: right;
     margin-right: 0; }
   .zinnia.left-sidebar #content {
@@ -209,10 +232,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     display: none; } }
 
 .zinnia #header {
-  margin-bottom: 1em; }
+    background-color:#100e17;
+  margin-bottom: 1em;
+   padding-bottom:1.5em;}
   .zinnia #header h1 {
     margin-top: 0.7em;
-    margin-bottom: 0;
+    margin-bottom: 0em;;
     font-weight: bold;
      }
      .zinnia #header h1 a{
@@ -223,8 +248,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   .zinnia #header blockquote {
     border: none;
     background: none;
-    margin: 0 0 1.5em 0;
+    color:#dbd7d7;
+    margin: 0 0 6.5em 0;
     padding: 0 1.5em 0 0;
+     }
+     .zinnia #header p{
+     color:#dbd7d7;
      }
   .zinnia #header form {
     margin-top:1.2em;
@@ -248,7 +277,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     .zinnia #header form input[type=submit] {
       display: none; }
   .zinnia #header .top-navigation {
-    margin: 0;
+    margin: 0 0 4em 0;
     float: right;
     display: none; }
     .zinnia #header .top-navigation li {
@@ -260,6 +289,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         content: ""; }
       .zinnia #header .top-navigation li.last:after {
         content: ""; }
+        .zinnia #header .top-navigation li a{
+        color:#dbd7d7;
+        }
     .zinnia #header .top-navigation .sitemap {
       background: transparent url("../img/sitemap.png") no-repeat scroll left center;
       padding-left: 1.5em; }
@@ -279,6 +311,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     .zinnia #header blockquote {
       margin-left: 6em; } }
 
+.zinnia .breadcrumbs li {
+      background: -webkit-linear-gradient(left, rgba(250, 0, 1, 1) 0%,  rgba(233,195,36,0.938813025210084) 0%, rgba(246,4,25,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+      }
 .zinnia .slider-container {
   height: auto;
   max-width: 800px;
@@ -409,13 +446,23 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         content: ""; } }
 
 .zinnia .hentry {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  margin-left:3em;
+   }
 .zinnia h2.entry-title {
   font-weight: bold;
-  margin-bottom: 0; }
+  margin-bottom: 0;}
   .zinnia  h2.entry-title:first-letter {
       text-transform:uppercase;
       }
+  .zinnia h2.entry-title a{
+  color:#292833;
+  }
+  .zinnia h2.entry-title a:hover{
+  background: -webkit-linear-gradient(left, rgba(250, 0, 1, 1) 0%,  rgba(233,195,36,0.938813025210084) 0%, rgba(246,4,25,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
 
 .zinnia .entry-info {
   padding-left: 2em;
@@ -429,7 +476,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   .zinnia .entry-image img {
     border-radius:25px;
     width: 70%;
-     height:30em;
      }
 
 .zinnia .entry-summary p {
@@ -474,6 +520,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   -webkit-text-fill-color: transparent;
    }
 
+
 .zinnia .entry-footer {
   clear: both; }
   .zinnia .entry-footer p {
@@ -496,7 +543,24 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .zinnia .entry-widgets, .zinnia #comments, .zinnia #pingbacks, .zinnia #trackbacks {
   padding-top: 1em; }
+  /*-------------do stuff on side bar widgets -------------
+  ----------------------------*/
+  .zinnia .widget{
+      box-shadow:0px 4px 7px rgba(0,0,0,.5);
+        margin-right:2em;
+        background-color:#edf0f5;
+        padding: 1em 1em 1em 1em;
+         margin-bottom:2em;
+          padding: 1em 1em 1em 1em;
+  }
+.zinnia #widget-welcome p{
+    color:#292f33;
+    }
+    .zinnia .widget li{
+      color:#292f33;
+    }
 
+/*----------------------end of doing---*/
 .zinnia #comment-list li, .zinnia #pingback-list li, .zinnia #trackback-list li {
   list-style: none;
   padding: 1em 1em 0 1em;
@@ -542,21 +606,34 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       padding: 0 0.5em; }
     .zinnia ul.paginator li.index, .zinnia ul.paginator li.previous, .zinnia ul.paginator li.next, .zinnia ul.paginator li.ellipsis {
       display: none; }
+ /*----------mobile design----------------------------------------------------------------------------------------------------------------------
+ ----------------------*/
     @media (min-width: 480px) {
       .zinnia ul.paginator li.previous, .zinnia ul.paginator li.next, .zinnia ul.paginator li.ellipsis {
-        display: inline-block; } }
+        display: inline-block; }
+
+         }
     @media (min-width: 1024px) {
       .zinnia ul.paginator li.index {
         display: inline-block; } }
 
 .zinnia #footer {
-  padding-top: 1em; }
+  padding-top: 1em;
+   }
 
 .zinnia #sidebar h3 {
-  padding: 0.5em; }
+  padding: 0.5em;
+  color:red;
+  }
+  .zinnia #sidebar h3 a{
+  color:red;
+  }
 
 .zinnia #sidebar p {
-  padding-left: 1em; }
+  padding-left: 1em;
+    color:#292f33;}
+.zinnia #sidebar a {
+  color: #0000FF; }
 
 .zinnia #sidebar ul, .zinnia #sidebar ol {
   margin-left: 1em; }
