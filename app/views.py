@@ -4,7 +4,8 @@ from app.models import PostImage
 
 def index(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        postimage = PostImage.objects.all()
+        return render(request, 'index.html', {'postimages':postimage})
 
 
 

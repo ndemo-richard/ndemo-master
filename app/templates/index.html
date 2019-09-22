@@ -155,21 +155,7 @@
 <section id="blog-intro">
     <div class="blog-intro">
         <h1>My latest blog posts</h1>
-        <div class="blog-content">
-            {% for post in post_list %}
-            <div class="g-card">
-                <div class="card-image">
-                    <a href="{% url 'post_detail' post.slug  %}" target="_blank">
-                        <img src="{{ post.pic.url }}" alt="{{ post.title }}" height="400" width="100%">
-                    </a>
-                </div>
-                <h4 class="title"><a href="{% url 'post_detail' post.slug  %}" target="_blank"> {{ post.title }}</a></h4>
-                <span class="publisher">{{ post.author  }} | {{ post.created_on|date:"D M Y" }}</span>
-            </div>
-            {% endfor %}
-
-        </div>
-         <p class="blog_button"><a href="{% url 'blog' %}" target="_blank" class="button">View my posts</a> </p>
+         <p class="blog_button"><a href="" target="_blank" class="button">View my posts</a> </p>
     </div>
 
 </section>

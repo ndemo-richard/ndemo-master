@@ -34,7 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     re_path(r'^weblog/', include('zinnia.urls')),
-    re_path(r'^comments/', include('django_comments.urls'))
+    re_path(r'^comments/', include('django_comments.urls')),
 ]
 
 urlpatterns += [
