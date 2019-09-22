@@ -18,12 +18,14 @@ from django.urls import path, include,re_path
 
 from django.contrib.sitemaps.views import index
 from django.contrib.sitemaps.views import sitemap
+from ndemo.sitemaps import Static_Sitemap
 from zinnia.sitemaps import AuthorSitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import TagSitemap
 
 sitemaps = {
+'static': Static_Sitemap(),
 'tags': TagSitemap,
 'blog': EntrySitemap,
 'authors': AuthorSitemap,
