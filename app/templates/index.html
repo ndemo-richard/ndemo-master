@@ -11,8 +11,8 @@
 <section id="intro">
     <div class="intro-overlay"></div>
     <div class="header-video">
-        <img src="{% static 'app/img/masthead.jpg' %}"
-             class="header-video__media"
+        <img data-src="{% static 'app/img/masthead.jpg' %}"
+             class="header-video__media lazyload"
              data-video-URL="https://player.vimeo.com/video/358812209"
              data-teaser="{% static 'app/video/teaser-video' %}"
              data-video-width="560"
@@ -73,7 +73,7 @@
         <h1>My Latest projects</h1>
         <div class="main">
             <div class="section">
-                <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+                <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
                 <div class="descriptions">
                    <p>pharmacy website</p>
                     <h1>Panaceameds</h1>
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="section">
-               <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+               <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
                 <div class="descriptions">
                     <p>Personal website</p>
                     <h1>Richard ndemo</h1>
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="section">
-               <img src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+               <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
                 <div class="descriptions">
                     <p>card sharing</p>
                     <h1>card site</h1>
@@ -143,7 +143,7 @@
         <div class="about-content">
             {% for postimage in postimages %}
             <div class="cardz">
-                <img src="{{ postimage.image.url }}" alt="{{ PostIMage.title }}" height="250" width="100">
+                <img class="lazyload" data-src="{{ postimage.image.url }}" alt="{{ PostIMage.title }}" height="250" width="100">
 
             </div>
             {% endfor %}

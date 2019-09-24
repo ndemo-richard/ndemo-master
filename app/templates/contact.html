@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | Say Hello :) {% endblock %} {% block content %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/contact.css' %}">
+{% endcompress %}
+
+<section id="contact">
+    <div class="row contact-info">
+               <br>
+        <br>
+        <br>
+
+        <div class="col-twelve tab-full" id='colorcontact'>
+
+            <h6>
+                <i class="fa fa-facebook-square"></i> Facebook
+                <a href="https://www.facebook.com/codebomblast/" target="_blank">fb.com/ndemorichard</a>
+            </h6>
+            <h6>
+                <i class="fa fa-code"></i> Dev Heroes Club
+                <a href="https://devheroes.club">Ndemo</a>
+            </h6>
+            <h6>
+                <i class="fa fa-instagram"></i> Instagram
+                <a href="https://www.instagram.com/richard_ndemo/" target="_blank">@ndemorichard</a>
+            </h6>
+            <h6>
+                <i class="fa fa-twitter-square"></i> Twitter
+                <a href="https://github.com/ndemo-richard" target="_blank">@ndemorichard</a>
+            </h6>
+            <h6>
+                <i class="fa fa-linkedin-square"></i> Linkedin
+                <a href="https://www.linkedin.com/in/richard-ndemo/" target="_blank">in/ndemorichard</a>
+            </h6>
+            <h6>
+                <i class="fa fa-github-square"></i> Github ->
+                <a href="https://github.com/ndemo-richard" target="_blank">ndemo-richard</a>
+            </h6>
+            <h6>
+                <i class="fa fa-skype"></i> Skype ID ->
+                <a href="#">ndemo</a>
+            </h6>
+            <h6>
+                <i class="fa fa-phone-square"></i> Whatsapp ->
+                <a href="#">+254714906854</a>
+            </h6>
+            <h6>
+                <i class="fa fa-phone-square"></i> Telegram ->
+                <a href="#">+254714906854</a>
+            </h6>
+            <h6>
+                <i class="fa fa-mail-reply"></i> Email :</h6>
+            <a href="#">ndemorich@ndemorichard.com</a>
+            <br>
+            <a href="#">ndemorich@gmail.com</a>
+
+        </div></div>
+        <br>
+        <br>
+        <br>
+
+
+
+</section>
+<!-- /contact -->
+{% endblock %}

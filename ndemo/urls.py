@@ -23,6 +23,8 @@ from zinnia.sitemaps import AuthorSitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import TagSitemap
+from django.conf import settings
+from django.views.static import serve
 
 sitemaps = {
 'static': Static_Sitemap(),
@@ -39,4 +41,3 @@ urlpatterns = [
     re_path(r'^comments/', include('django_comments.urls')),
     re_path(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
-

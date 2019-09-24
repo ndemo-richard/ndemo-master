@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | portfolio {% endblock %}
+{% block content %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/portfolio.css' %}">
+{% endcompress %}
+<section id="portfolio">
+
+    <div class="row section-intro">
+        <div class="col-twelve">
+            <h5>Portfolio</h5>
+            <h1>Some of my works</h1>
+        </div>
+    </div>
+    <div class="row portfolio-content">
+        <div class="col-twelve">
+            {% for port in content %}
+            <!--- portfolio-wrapper -->
+        <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+
+            <div class="bgrid folio-item">
+                <div class="item-wrap>">
+                   <img src="{{ port.pic.url }}" alt="{{ port.title }}">
+                    <a href="#{{ port.id }}" class="overlay">
+                        <div class="folio-item-table">
+                            <div class="folio-item-cell">
+                                <h3 class="folio-title">{{ port.title }}</h3>
+                                <span class="folio-types">
+                                    {{ port.sub }}
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- modal popups begin
+            ===========================================================-->
+            {% for port in content %}
+            <div id="{{ port.id }}" class="popup-modal slider mf-hide">
+                <div class="description-box">
+                    <h4>{{ port.title }}}</h4>
+                    <h6> {{port.sub }}</h6>
+                    {{ port.body|safe }}
+                    <div class="categories">{{ port.pub|date:'Y-M' }}</div>
+                </div>
+
+                <div class="link-box">
+                    <a href="{% url 'contact' %}">Contact me</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</section>
+{% include 'include/service.html' %}
+{% endblock %}

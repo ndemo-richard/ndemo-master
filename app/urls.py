@@ -6,12 +6,19 @@ from app.views import (
     index,
     codehub,
     resume,
+    contact,
+    portfolio,
+    about,
 )
 
 urlpatterns = [
     path('', index, name='home'),
     path('codehub/', codehub, name='codehub'),
     path('resume/', resume, name='resume'),
+    path('about/', about, name='about'),
+    path('portfolio/', portfolio, name='portfolio'),
+    path('contact/', contact, name='contact'),
+
 ]
 
 if not settings.DEBUG:
