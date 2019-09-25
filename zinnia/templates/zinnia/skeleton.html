@@ -4,7 +4,7 @@
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Richard-O-Ndemo</title>
+    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - blog</title>
     <meta name="robots" content="follow, all" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{% block meta-description %}{% trans "Ndemo blog" %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
@@ -28,7 +28,7 @@
         <nav>
           <ul class="top-navigation">
              <li class="home">
-              <a href="https://www.ndemorichard.com/" title="{% trans "Home" %}">
+              <a href="http://www.ndemorichard.com/" title="{% trans "Home" %}">
                 {% trans "Home" %}
               </a>
             </li>
@@ -51,7 +51,7 @@
           </p>
         </form>
         <h1>
-          <a href="{% url 'zinnia:entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
+          <a href="{% url 'zinnia:entry_archive_index' %}" title="blog" rel="home">
             Welcome To My Blog
           </a>
         </h1>
@@ -67,8 +67,8 @@
           <h2>{% trans "Useful links" %}</h2>
           <ul>
             <li>
-              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
-                {% trans "Weblog index" %}
+              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "blog index" %}">
+                {% trans "blog index" %}
               </a>
             </li>
             <li>

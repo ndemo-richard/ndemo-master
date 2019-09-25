@@ -37,7 +37,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
-    re_path(r'^weblog/', include('zinnia.urls')),
+    re_path(r'^blog/', include('zinnia.urls')),
     re_path(r'^comments/', include('django_comments.urls')),
     re_path(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
