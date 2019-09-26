@@ -121,16 +121,7 @@
       {% endfor %}
     </p>
     {% endblock entry-tags %}
-    {% block entry-shorturl %}
-    <p class="entry-shorturl">
-      <strong>{% trans "Short url" %}</strong> :
-      <a href="{{ object.short_url }}"
-         title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
-         rel="shortlink">
-        {{ object.short_url }}
-      </a>
-    </p>
-    {% endblock entry-shorturl %}
+
     {% block entry-discussions %}
     <p class="entry-discussions">
       <strong>{% trans "Discussions" %}</strong> :

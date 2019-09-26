@@ -40,7 +40,7 @@
     You need a good website that looks amazing and actually works .That's my specialty. If you want to learn more about me and want to work with me , give me a call or email me.
     </p>
     <p class="resume-link">
-       <a href="{% url 'home' %}">Checkout my full resume !</a>
+       <a href="{% url 'resume' %}">Checkout my full resume !</a>
     </p>
 </div>
 </section>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <p class="portfolio_button"><a href="{% url 'home' %}"class="button">View More Projects</a> </p>
+        <p class="portfolio_button"><a href="{% url 'portfolio' %}"class="button">View More Projects</a> </p>
 
     </div>
 
@@ -130,7 +130,7 @@
                     <span>having a problem and need solutions from an expert?</span>
                 </p>
                 <h1>Hire a software Developer Today</h1>
-                <p class="contact_button"><a href="{% url 'home' %}"class="button">Contact Me Now</a> </p>
+                <p class="contact_button"><a href="{% url 'contact' %}"class="button">Contact Me Now</a> </p>
             </div>
         </div>
 
@@ -148,14 +148,14 @@
             </div>
             {% endfor %}
         </div>
-         <p class="about_button"><a href="{% url 'home' %}"class="button">Learn More about me</a> </p>
+         <p class="about_button"><a href="{% url 'about' %}"class="button">Learn More about me</a> </p>
     </div>
 
 </section>
 <section id="blog-intro">
     <div class="blog-intro">
         <h1>My latest blog posts</h1>
-         <p class="blog_button"><a href="" target="_blank" class="button">View my posts</a> </p>
+         <p class="blog_button"><a href="zinnia:entry_archive_index" target="_blank" class="button">View my posts</a> </p>
     </div>
 
 </section>
