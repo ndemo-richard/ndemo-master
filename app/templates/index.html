@@ -71,31 +71,18 @@
 <section id="portfolio-intro">
     <div class="portfolio-intro">
         <h1>My Latest projects</h1>
-        <div class="main">
+       <div class="main">
+            {% for port in content %}
             <div class="section">
-                <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
+                        <img src="{{ port.pic.url }}" alt="{{ port.title }}">
                 <div class="descriptions">
-                   <p>pharmacy website</p>
-                    <h1>Panaceameds</h1>
-                    <button class="button">View Project</button>
+                    <p>{{ port.sub }}</p>
+                    <h1>{{ port.title }}</h1>
+                    <button class="button"><a href="{% url 'portfolio' %}#{{ port.id }}">View Project</a></button>
                 </div>
             </div>
-            <div class="section">
-               <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
-                <div class="descriptions">
-                    <p>Personal website</p>
-                    <h1>Richard ndemo</h1>
-                    <button class="button">View Project</button>
-                </div>
-            </div>
-            <div class="section">
-               <img class="lazyload" data-src="{% static 'app/img/bg2.jpg' %}" alt="ndemo">
-                <div class="descriptions">
-                    <p>card sharing</p>
-                    <h1>card site</h1>
-                    <button class="button">View Project</button>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
         <p class="portfolio_button"><a href="{% url 'portfolio' %}"class="button">View More Projects</a> </p>
 
@@ -155,6 +142,22 @@
 <section id="blog-intro">
     <div class="blog-intro">
         <h1>My latest blog posts</h1>
+        <div class="blog-content">
+            {% for post in post_list %}
+            <div class="g-card">
+                <div class="card-image">
+                    {% if post.image %}
+                    <a href="{{ post.get_absolute_url }}">
+                        <img src="{{ post.image.url}}" alt="{{ post.title }}" height="250" width="100%">
+                    </a>
+                    {% endif %}
+                </div>
+                <h4 class="title"><a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></h4>
+                <span class="publisher">{{ post.excerpt  }} | {{ post.publication_date|date:"D M Y" }}</span>
+            </div>
+            {% endfor %}
+
+        </div>
          <p class="blog_button"><a href="zinnia:entry_archive_index" target="_blank" class="button">View my posts</a> </p>
     </div>
 

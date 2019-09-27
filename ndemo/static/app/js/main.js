@@ -17,10 +17,59 @@
        $("#loader").fadeOut("slow", function(){
 
         // will load out the whole DIV that covers the website
-       $("#preloader").delay(300).fadeOut("slow");
+       $("#preloader").delay(100).fadeOut("slow");
        });
 
     })
+     $("#owl-slider").owlCarousel({
+     navigation: false,
+     pagination: true,
+     itemsCustom : [
+	        [0, 1],
+	        [700, 2],
+	        [960, 3]
+	     ],
+        navigationText: false
+    });
+
+       /*----------------------------------------------------- */
+	/* Alert Boxes
+  	------------------------------------------------------- */
+	$('.alert-box').on('click', '.close', function() {
+	  $(this).parent().fadeOut(500);
+	});
+
+       /*---------------------------------------------------- */
+	/*	Masonry
+	------------------------------------------------------ */
+	var containerProjects = $('#folio-wrapper');
+
+	containerProjects.imagesLoaded( function() {
+
+		containerProjects.masonry( {
+		  	itemSelector: '.folio-item',
+		  	resize: true
+		});
+
+	});
+
+
+        	/*----------------------------------------------------*/
+	/*	Modal Popup
+	------------------------------------------------------*/
+   $('.item-wrap a').magnificPopup({
+      type:'inline',
+      fixedContentPos: false,
+      removalDelay: 300,
+      showCloseBtn: false,
+      mainClass: 'mfp-fade'
+
+   });
+
+   $(document).on('click', '.popup-modal-dismiss', function (e) {
+   	e.preventDefault();
+   	$.magnificPopup.close();
+   });
 
     /*--------------------------------------------- */
     /* smooth scrolling
@@ -37,47 +86,7 @@
     }, 800, 'swing', function () {
         window.location.hash = target;
     })
-    })
-
-
-    /*----------------------------------------------------- */
-	/* Alert Boxes
-  	------------------------------------------------------- */
-	$('.alert-box').on('click', '.close', function() {
-	  $(this).parent().fadeOut(500);
-	});
-
-
-    /*---------------------------------------------------- */
-	/*	Masonry
-	------------------------------------------------------ */
-	var containerProjects = $('#folio-wrapper');
-
-	containerProjects.imagesLoaded( function() {
-
-		containerProjects.masonry( {
-		  	itemSelector: '.folio-item',
-		  	resize: true
-		});
-
-	});
-        	/*----------------------------------------------------*/
-	/*	Modal Popup
-	------------------------------------------------------*/
-   $('.item-wrap a').magnificPopup({
-
-      type:'inline',
-      fixedContentPos: false,
-      removalDelay: 300,
-      showCloseBtn: false,
-      mainClass: 'mfp-fade'
-
-   });
-
-   $(document).on('click', '.popup-modal-dismiss', function (e) {
-   	e.preventDefault();
-   	$.magnificPopup.close();
-   });
+    });
 
     /*---------------------------------------------------- */
 	/*  Placeholder Plugin Settings
@@ -138,16 +147,6 @@
 	});
 
 
-        	$("#owl-slider").owlCarousel({
-        navigation: false,
-        pagination: true,
-        itemsCustom : [
-	        [0, 1],
-	        [700, 2],
-	        [960, 3]
-	     ],
-        navigationText: false
-    });
 
     /*----------------------------------------- */
     /* back to top
