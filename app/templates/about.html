@@ -1,1 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | check me out) {% endblock %} {% block content %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/about.css' %}">
+{% endcompress %}
+
+<section id="about">
+
+</section>
+{% endblock %}
