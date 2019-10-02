@@ -17,7 +17,7 @@
        $("#loader").fadeOut("slow", function(){
 
         // will load out the whole DIV that covers the website
-       $("#preloader").delay(100).fadeOut("slow");
+       $("#preloader").delay(5).fadeOut("slow");
        });
 
     })

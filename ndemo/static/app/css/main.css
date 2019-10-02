@@ -218,7 +218,7 @@ hr {
 }
 .header-video img{
             min-height:300px;
-            filter:brightness(50%) grayscale(100%);
+            filter:brightness(50%);
          }
 .header-video iframe{
     position:absolute;
@@ -236,7 +236,7 @@ hr {
         left: 0;
         right: 0;
         /*filter:blur(4px);*/
-        filter:brightness(50%) grayscale(70%);
+        filter:brightness(40%) grayscale(60%);
 }
 .header-video{
         width:70%;
@@ -508,7 +508,9 @@ hr {
     font-size:8rem;
     color:#00adef;
 }
-
+.codehub-section p{
+ color:#f5f2f2;
+}
 
 #portfolio-intro{
     background:#100e17;
