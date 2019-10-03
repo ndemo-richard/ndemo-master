@@ -92,6 +92,27 @@ section{
                 transform: rotate(360deg);
         }
 }
+
+
+/*---------------
+* small mobile device
+*/
+@media screen and (max-width: 450px){
+#loader{
+        width: 50px;
+        height: 50px;
+}
+#loader:before{
+        content: "";
+        border-top: 10px solid rgb(255, 255, 255);
+        border-right: 10px solid rgb(255, 255, 255, 0.1);
+        border-bottom: 10px solid rgb(255, 255, 255, 0.1);
+        border-left: 10px solid #00adef;
+        width: 60px;
+        height:60px;
+
+}
+}
 /* Icon 1 */
 
 .animated-icon1, .animated-icon2, .animated-icon3 {
@@ -129,15 +150,15 @@ transition: .25s ease-in-out;
 }
 
 .animated-icon1 span {
-background: #e65100;
+background: #23174d;
 }
 
 .animated-icon2 span {
-background: #e3f2fd;
+background: #0d0c0d;
 }
 
 .animated-icon3 span {
-background: #f3e5f5;
+background: #0d0c0d;
 }
 
 .animated-icon1 span:nth-child(1) {
@@ -257,44 +278,24 @@ header {
             border-radius: 25px;
         }
         .navbar-wrapper .navbar{
-            background:white;
+            background:#100e17;
             border-radius:25px;
             padding-right: 0px;
             pading-left: 0px;
+            padding-bottom:0px;
 
         }
         .navbar-wrapper .nav-button{
                 margin:0%;
                 float:left;
+                width:5rem;
+                height:5rem;
                 border-radius:25px;
 
         }
         .navbar-wrapper .navbar ul li a{
-        color:#141414;
+        color:#f7f2f2;
         }
-
-@keyframes heartbeat {
-  0% {
-    transform: scale( 1 );
-    background:transparent;
-  }
-  20% {
-    transform: scale( 1.25 )
-      translateX(5%)
-      translateY(5%);
-      background:transparent;
-  }
-  40% {
-    transform: scale( 1.5 )
-        background:transparent;
-      translateX(10%)
-      translateY(10%);
-  }
-}
-.navbar-wrapper .nav-button,.navbar-wrapper .navbar {
-  animation: heartbeat 3s 3; // our heart has infinite heartbeat :)
-  ...
-}
         .logo_left {
 	        display:none;
         }
