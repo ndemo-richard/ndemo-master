@@ -128,12 +128,9 @@
     <div class="about-intro">
         <h1>My life as a developer</h1>
         <div class="about-content">
-            {% for postimage in postimages %}
-            <div class="cardz">
-                <img class="lazyload" data-src="{{ postimage.image.url }}" alt="{{ PostIMage.title }}" height="250" width="100">
-
-            </div>
-            {% endfor %}
+            
+		<ul id="instafeed"></ul>
+            
         </div>
          <p class="about_button"><a href="{% url 'about' %}"class="button">Learn More about me</a> </p>
     </div>

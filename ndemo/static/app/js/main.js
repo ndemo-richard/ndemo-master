@@ -11,13 +11,13 @@
     /*----------------------- *.
     /* preloader
     -------------------------------------- */
-    $(window).load(function() {
+    $(window).on('load',function() {
 
        //will first fade out the loading animation
        $("#loader").fadeOut("slow", function(){
 
         // will load out the whole DIV that covers the website
-       $("#preloader").delay(5).fadeOut("slow");
+       $("#preloader").delay(1).fadeOut("slow");
        });
 
     })
@@ -168,6 +168,143 @@
                     }
             }
     });
+
+	var token = '2024542625.1677ed0.30f58e666eab456ab0a7a5ac39949983',
+    num_photos = 10,
+    container = document.getElementById( 'instafeed' ),
+    scrElement = document.createElement( 'script' );
+
+window.mishaProcessResult = function( data ) {
+	var x;
+	for( x in data.data ){
+		container.innerHTML += '<li><img src="' + data.data[x].images.low_resolution.url + '"></li>';
+	}
+}
+
+scrElement.setAttribute( 'src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + num_photos + '&callback=mishaProcessResult' );
+document.body.appendChild( scrElement );
+
+// const TypeWriter = function(txtElement, words, wait = 3000) {
+//   this.txtElement = txtElement;
+//   this.words = words;
+//   this.txt = '';
+//   this.wordIndex = 0;
+//   this.wait = parseInt(wait, 10);
+//   this.type();
+//   this.isDeleting = false;
+// }
+
+// // Type Method
+// TypeWriter.prototype.type = function() {
+//   // Current index of word
+//   const current = this.wordIndex % this.words.length;
+//   // Get full text of current word
+//   const fullTxt = this.words[current];
+
+//   // Check if deleting
+//   if(this.isDeleting) {
+//     // Remove char
+//     this.txt = fullTxt.substring(0, this.txt.length - 1);
+//   } else {
+//     // Add char
+//     this.txt = fullTxt.substring(0, this.txt.length + 1);
+//   }
+
+//   // Insert txt into element
+//   this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+//   // Initial Type Speed
+//   let typeSpeed = 300;
+
+//   if(this.isDeleting) {
+//     typeSpeed /= 2;
+//   }
+
+//   // If word is complete
+//   if(!this.isDeleting && this.txt === fullTxt) {
+//     // Make pause at end
+//     typeSpeed = this.wait;
+//     // Set delete to true
+//     this.isDeleting = true;
+//   } else if(this.isDeleting && this.txt === '') {
+//     this.isDeleting = false;
+//     // Move to next word
+//     this.wordIndex++;
+//     // Pause before start typing
+//     typeSpeed = 500;
+//   }
+
+//   setTimeout(() => this.type(), typeSpeed);
+// }
+
+
+// ES6 Class
+class TypeWriter {
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement;
+    this.words = words;
+    this.txt = '';
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.type();
+    this.isDeleting = false;
+  }
+
+  type() {
+    // Current index of word
+    const current = this.wordIndex % this.words.length;
+    // Get full text of current word
+    const fullTxt = this.words[current];
+
+    // Check if deleting
+    if(this.isDeleting) {
+      // Remove char
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // Add char
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Insert txt into element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Initial Type Speed
+    let typeSpeed = 300;
+
+    if(this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    // If word is complete
+    if(!this.isDeleting && this.txt === fullTxt) {
+      // Make pause at end
+      typeSpeed = this.wait;
+      // Set delete to true
+      this.isDeleting = true;
+    } else if(this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      // Move to next word
+      this.wordIndex++;
+      // Pause before start typing
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+
+// Init On DOM Load
+document.addEventListener('DOMContentLoaded', init);
+
+// Init App
+function init() {
+  const txtElement = document.querySelector('.txt-type');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+  // Init TypeWriter
+  new TypeWriter(txtElement, words, wait);
+}
 
 })(jQuery);
 

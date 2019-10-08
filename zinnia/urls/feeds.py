@@ -8,7 +8,7 @@ from zinnia.feeds import EntryDiscussions
 from zinnia.feeds import EntryPingbacks
 from zinnia.feeds import EntryTrackbacks
 from zinnia.feeds import LastDiscussions
-from zinnia.feeds import LastEntries
+from zinnia.feeds import BlogPost
 from zinnia.feeds import SearchEntries
 from zinnia.feeds import TagEntries
 from zinnia.urls import _
@@ -16,7 +16,7 @@ from zinnia.urls import _
 
 urlpatterns = [
     url(r'^$',
-        LastEntries(),
+        BlogPost(),
         name='entry_feed'),
     url(_(r'^discussions/$'),
         LastDiscussions(),

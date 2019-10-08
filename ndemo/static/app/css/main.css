@@ -703,20 +703,17 @@ hr {
     margin-bottom:1.2rem;
 }
 .about-content{
-    background-image:radial-gradient(ellipse closest-side, rgb(15,14,22,0),#100e17),url("/static/app/img/developer.jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
+
     width:100%;
     padding-left:16px;
     height:100vh;
-    display:flex;
-    flex-flow:row wrap;
-    justify-content:flex-start;
-    align-items:center;
-    align-content:center;
+    
 }
-.cardz{
+#instafeed{
+	list-style:none;
+}
+#instafeed li{
+	float:right;
     margin:1rem;
     position:relative;
     width:18%;
@@ -727,7 +724,7 @@ hr {
     padding-top:0px;
     border-radius:4px;
 }
-.cardz img{
+#instafeed img{
     width:100%;
     height:100%;
     border-radius: 5px 5px 0 0;
@@ -942,10 +939,31 @@ hr {
             margin-bottom:0;
             padding-bottom:0;
         }
-        .cardz{
-            width:5em;
-            height:5em;
-        }
+   .about-content{
+    width:100%;
+    padding-left:10%;
+    height:760px;
+    
+}
+#instafeed{
+	list-style:none;
+	margin: 0 auto;
+}
+#instafeed li{
+    float:left;
+    margin:1rem;
+    position:relative;
+    width:25%;
+    height:25%;
+    padding-top:0px;
+    border-radius:4px;
+}
+#instafeed li img{
+    width:100%;
+    height:100%;
+    border-radius: 5px 5px 0 0;
+
+    }
         .about-intro .about_button{
             font-size:1.2rem;
         }
@@ -1132,10 +1150,7 @@ hr {
             margin-bottom:0;
             padding-bottom:0;
         }
-        .cardz{
-            width:5em;
-            height:5em;
-        }
+      
         .about-intro .about_button{
             font-size:1.2rem;
         }
@@ -1333,10 +1348,33 @@ hr {
             margin-bottom:0;
             padding-bottom:0;
         }
-        .cardz{
-            width:5em;
-            height:5em;
-        }
+.about-content{
+
+    width:100%;
+    padding-left:20%;
+    height:50vh;
+    
+}
+#instafeed{
+	list-style:none;
+}
+#instafeed li{
+	float:left;
+    margin:1rem;
+    position:relative;
+    width:20%;
+    height:20%;
+    overflow:hidden;
+    padding-top:0px;
+    border-radius:4px;
+}
+#instafeed li img{
+    width:100%;
+    height:100%;
+    border-radius: 5px 5px 0 0;
+
+    }
+   
         .about-intro .about_button{
             font-size:1.2rem;
         }

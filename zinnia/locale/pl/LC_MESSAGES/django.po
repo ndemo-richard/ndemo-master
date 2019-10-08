@@ -242,7 +242,7 @@ msgstr "Tydzień %s"
 
 #: feeds.py:181 templates/zinnia/entry_archive.html:5
 #: templates/zinnia/entry_archive.html:7
-msgid "Last entries"
+msgid "Blog Post"
 msgstr ""
 
 #: feeds.py:187

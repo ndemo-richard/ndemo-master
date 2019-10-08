@@ -163,7 +163,7 @@ class EntryFeed(ZinniaFeed):
         return 'image/jpeg'
 
 
-class LastEntries(EntryFeed):
+class BlogPost(EntryFeed):
     """
     Feed for the last entries.
     """
@@ -184,7 +184,7 @@ class LastEntries(EntryFeed):
         """
         Title of the feed
         """
-        return _('Last entries')
+        return _('Blog Posts')
 
     def description(self):
         """

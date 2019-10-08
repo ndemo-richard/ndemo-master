@@ -28,7 +28,7 @@ from zinnia.feeds import EntryFeed
 from zinnia.feeds import EntryPingbacks
 from zinnia.feeds import EntryTrackbacks
 from zinnia.feeds import LastDiscussions
-from zinnia.feeds import LastEntries
+from zinnia.feeds import BlogPost
 from zinnia.feeds import SearchEntries
 from zinnia.feeds import TagEntries
 from zinnia.feeds import ZinniaFeed
@@ -176,13 +176,13 @@ class FeedsTestCase(TestCase):
         entry.save()
         self.assertEqual(feed.item_enclosure_url(entry),
                          urljoin('http://example.com', entry.image.url))
-        original_feed_format = LastEntries.feed_format
-        LastEntries.feed_format = 'atom'
-        feed = LastEntries()
+        original_feed_format = BlogPost.feed_format
+        BlogPost.feed_format = 'atom'
+        feed = BlogPost()
         feed.protocol = 'https'
         self.assertEqual(feed.item_enclosure_url(entry),
                          urljoin('https://example.com', entry.image.url))
-        LastEntries.feed_format = original_feed_format
+        BlogPost.feed_format = original_feed_format
         default_storage.delete(path)
 
     def test_entry_feed_enclosure_without_image(self):
@@ -203,10 +203,10 @@ class FeedsTestCase(TestCase):
 
     def test_last_entries(self):
         self.create_published_entry()
-        feed = LastEntries()
+        feed = BlogPost()
         self.assertEqual(feed.link(), '/')
         self.assertEqual(len(feed.items()), 1)
-        self.assertEqual(feed.get_title(None), 'Last entries')
+        self.assertEqual(feed.get_title(None), 'Blog Post')
         self.assertEqual(
             feed.description(),
             'The last entries on the site example.com')
@@ -421,20 +421,20 @@ class FeedsTestCase(TestCase):
         self.assertEqual(feed.item_author_name(entry), None)
 
     def test_entry_feed_rss_or_atom(self):
-        original_feed_format = LastEntries.feed_format
-        LastEntries.feed_format = ''
-        feed = LastEntries()
+        original_feed_format = BlogPost.feed_format
+        BlogPost.feed_format = ''
+        feed = BlogPost()
         self.assertEqual(feed.feed_type, DefaultFeed)
-        LastEntries.feed_format = 'atom'
-        feed = LastEntries()
+        BlogPost.feed_format = 'atom'
+        feed = BlogPost()
         self.assertEqual(feed.feed_type, Atom1Feed)
         self.assertEqual(feed.subtitle, feed.description)
-        LastEntries.feed_format = original_feed_format
+        BlogPost.feed_format = original_feed_format
 
     def test_title_with_sitename_implementation(self):
         feed = ZinniaFeed()
         self.assertRaises(NotImplementedError, feed.title)
-        feed = LastEntries()
+        feed = BlogPost()
         self.assertEqual(feed.title(), 'example.com - Last entries')
 
     def test_discussion_feed_with_same_slugs(self):
