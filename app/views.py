@@ -1,5 +1,13 @@
+import mimetypes
+import os
+from wsgiref.util import FileWrapper
+
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
-from app.models import PostImage,Portfolio
+from django.utils.encoding import smart_str
+
+from app.models import PostImage, Portfolio, Project, Resume
+from ndemo import settings
 from zinnia.models.entry import Entry
 
 
@@ -12,11 +20,19 @@ def index(request):
 
 
 def codehub(request):
-    return render(request, 'codehub.html')
+    projects = Project.objects.all()
+    return render(request, 'codehub.html', {'projects': projects})
+
+
+def project_detail(request, pk):
+    project = Project.objects.get(pk=pk)
+    return render(request, 'project_detail.html', {'project': project})
 
 
 def resume(request):
-    return render(request, 'resume.html')
+    if request.method == 'GET':
+        resumes = Resume.objects.all()
+        return render(request, 'resume.html', {'resumes': resumes})
 
 
 def contact(request):
@@ -28,5 +44,10 @@ def about(request):
 
 
 def portfolio(request):
-    content = Portfolio.objects.all().order_by('-pub')
-    return render(request, 'portfolio.html',{'content':content})
+    portfolios = Portfolio.objects.all().order_by('-pub')
+    return render(request, 'portfolio.html', {'portfolios': portfolios})
+
+
+def portfolio_detail(request,id):
+    portfolio = Portfolio.objects.get(id=id)
+    return render(request, 'portfolio_detail.html', {'portfolio': portfolio})

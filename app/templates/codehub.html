@@ -8,15 +8,25 @@
 {% endcompress %}
 <section id="intro">
      <div class="intro-overlay"></div>
-    <div class="intro-content">
-        <div class="row">
-            <div class="col-twelve">
-                <p class="intro-position">
-                    <span>~check this out~</span>
-                </p>
-                <h1> Dig a little deeper</h1>
-        </div>
+    </div>
+</section>
+<section id="content">
+    <h1>Projects</h1>
+    <div class="row">
+{% for project in projects %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{{ project.image.url }}" alt="project image"  width="100">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.lead }}</p>
+                <a href="{% url 'project_detail' project.pk %}"class="project_btn button">
+                    check It out
+                </a>
+            </div>
         </div>
     </div>
+    {% endfor %}
+</div>
 </section>
 {% endblock %}

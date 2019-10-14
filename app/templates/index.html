@@ -78,7 +78,7 @@
                 <div class="descriptions">
                     <p>{{ port.sub }}</p>
                     <h1>{{ port.title }}</h1>
-                    <button class="button"><a href="{% url 'portfolio' %}#{{ port.id }}">View Project</a></button>
+                    <button class="button"><a href="{% url 'portfolio_detail' port.id %}">View Project</a></button>
                 </div>
             </div>
             {% endfor %}
@@ -155,7 +155,7 @@
             {% endfor %}
 
         </div>
-         <p class="blog_button"><a href="zinnia:entry_archive_index" target="_blank" class="button">View my posts</a> </p>
+         <p class="blog_button"><a href="{% url 'zinnia:entry_archive_index' %}" target="_blank" class="button">View my posts</a> </p>
     </div>
 
 </section>

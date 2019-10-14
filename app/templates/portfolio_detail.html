@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ portfolio.title}}{% endblock %}
+{% block content %}
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/portfolio.css' %}">
+{% endcompress %}
+<section id="details-intro">
+     <div class="details-overlay"></div>
+    </div>
+</section>
+<section id="details">
+    <div class="details">
+<h1>{{ portfolio.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img class="details-img" src="{{ portfolio.pic.url }}" alt="portfolio image" width="100">
+        <p>{{ port.body }}</p>
+    </div>
+    <div class="col-md-4">
+        <h5>{{ portfolio.sub }}</h5>
+        <p>{{ portfolio.pub }}</p>
+        <p>{{ portfolio.tags }}</p>
+        <p>Source code is available at:</p>
+        <p><a href="{{ portfolio.link }}">{{ portfolio.link }}</a></p>
+    </div>
+</div>
+</div>
+</section>
+{% endblock %}

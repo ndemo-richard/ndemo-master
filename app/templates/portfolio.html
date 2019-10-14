@@ -19,7 +19,7 @@
    	</div> <!-- /section-intro-->
    	<div class="row portfolio-content">
    		<div class="col-twelve">
-        {% for port in content %}
+        {% for port in portfolios %}
    			<!-- portfolio-wrapper -->
 	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
 
@@ -41,13 +41,14 @@
                 {% endfor %}
 	            <!-- modal popups - begin
 	            ============================================================= -->
-                {% for port in content %}
+                {% for port in portfolios %}
 	            <div id="{{ port.id }}" class="popup-modal slider mfp-hide">
 					   <div class="description-box">
 					      <h4>{{ port.title }}</h4>
                           <h6>{{ port.sub }}</h6>
                            {{ port.body|safe }}
 					      <div class="categories">{{ port.pub|date:'Y-M' }}</div>
+						   <a href="{% url 'portfolio_detail' port.id %}"class="button">Check details</a>
 					   </div>
 
 			         <div class="link-box">

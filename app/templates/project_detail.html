@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load compress %}
+{% block title %}{{ block.super }} | codehub {% endblock %}
+{% block content %}
+{% compress css %}
+<link rel="stylesheet" href="{% static 'app/css/codehub.css' %}">
+{% endcompress %}
+<section id="details-intro">
+     <div class="details-overlay"></div>
+    </div>
+</section>
+<section id="details">
+    <div class="details">
+<h1>{{ project.title }}</h1>
+<div class=" row">
+    <div class=" col-md-8">
+        <img class="details-img" src="{{ project.image.url }}" alt="project image" width="100">
+        <p>{{ project.description }}</p>
+    </div>
+    <div class="col-md-4">
+        <h5>Uploaded on:</h5>
+        <p>{{ project.pub }}</p>
+        <h5>Technology used:</h5>
+        <p>{{ project.technology }}</p>
+        <h5>Source code is available at:</h5>
+        <p><a href="{{ project.link }}">{{ project.link }}</a></p>
+    </div>
+</div>
+    </div>
+</section>
+{% endblock %}

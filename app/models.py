@@ -30,7 +30,7 @@ class Portfolio(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    lead = models.CharField(max_length=100)
+    lead = models.TextField()
     description = models.TextField()
     technology = models.CharField(max_length=20)
     link = models.URLField(null=True, blank=True)
@@ -41,3 +41,9 @@ class Project(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class Resume(models.Model):
+    description = models.CharField(max_length=255,blank=True)
+    document = models.FileField(upload_to='resume/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)

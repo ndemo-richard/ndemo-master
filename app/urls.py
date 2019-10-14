@@ -5,20 +5,23 @@ from django.conf import settings
 from app.views import (
     index,
     codehub,
+    project_detail,
     resume,
     contact,
     portfolio,
+    portfolio_detail,
     about,
 )
 
 urlpatterns = [
     path('', index, name='home'),
     path('codehub/', codehub, name='codehub'),
+    path("codehub/<int:pk>/",project_detail,name="project_detail"),
     path('resume/', resume, name='resume'),
     path('about/', about, name='about'),
     path('portfolio/', portfolio, name='portfolio'),
+    path("portfolio/<int:id>/", portfolio_detail,name="portfolio_detail"),
     path('contact/', contact, name='contact'),
-
 ]
 
 if not settings.DEBUG:
