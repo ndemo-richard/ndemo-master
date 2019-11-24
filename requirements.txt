@@ -20,7 +20,7 @@ importlib-metadata==0.22
 kombu==4.6.4
 more-itertools==7.2.0
 mots-vides==2015.5.11
-Pillow==6.1.0
+Pillow==6.2.0
 pyparsing==2.4.2
 pytz==2019.2
 rcssmin==1.0.6
