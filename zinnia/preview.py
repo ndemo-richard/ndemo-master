@@ -3,8 +3,8 @@ from __future__ import division
 
 from bs4 import BeautifulSoup
 
-from django.utils import six
-from django.utils.encoding import python_2_unicode_compatible
+import six
+from six import python_2_unicode_compatible
 from django.utils.functional import cached_property
 from django.utils.html import strip_tags
 from django.utils.text import Truncator

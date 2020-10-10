@@ -1,7 +1,7 @@
 """Category model for Zinnia"""
 from django.db import models
 from django.urls import reverse
-from django.utils.encoding import python_2_unicode_compatible
+from six import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from mptt.managers import TreeManager

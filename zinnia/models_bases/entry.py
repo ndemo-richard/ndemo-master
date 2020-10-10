@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils import timezone
-from django.utils.encoding import python_2_unicode_compatible
+from six import python_2_unicode_compatible
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
 from django.utils.translation import ugettext_lazy as _
