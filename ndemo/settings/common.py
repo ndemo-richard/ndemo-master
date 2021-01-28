@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'compressor',
     'taggit',
     'bootstrap4',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.sitemaps',
     'django_comments',
     'mptt',
