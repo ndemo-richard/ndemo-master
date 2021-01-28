@@ -15,8 +15,8 @@ DATABASES = {
  {
   "ENGINE": "django.db.backends.postgresql_psycopg2", #one of those should work
   'ENGINE': 'django.db.backends.postgresql',   #one of those should work
-  "NAME": 'ndemo_db',
-  "HOST": "localhost", 
+  "NAME": 'd9q4fnpf64jds1',
+  "HOST": "ec2-52-2-6-71.compute-1.amazonaws.com", 
   "PORT": "5432",
  }
  }
