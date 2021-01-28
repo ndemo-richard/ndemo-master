@@ -1,1 +1,1 @@
-web: gunicorn ndemo.wsgi
+web: gunicorn ndemo.wsgi --log-file-
