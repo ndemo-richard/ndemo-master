@@ -9,13 +9,13 @@ from xmlrpc.client import ServerProxy
 
 from bs4 import BeautifulSoup
 
-#from django.contrib.sites.models import Site
+from django.contrib.sites.models import Site
 from django.urls import reverse
 
 from zinnia.flags import PINGBACK
 from zinnia.settings import PROTOCOL
 
-'''
+
 class URLRessources(object):
     """
     Object defining the ressources of the Website.
@@ -28,7 +28,7 @@ class URLRessources(object):
                                   reverse('zinnia:entry_archive_index'))
         self.blog_feed = '%s%s' % (self.site_url,
                                    reverse('zinnia:entry_feed'))
-'''
+
 
 class DirectoryPinger(Thread):
     """
