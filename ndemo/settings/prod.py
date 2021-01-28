@@ -13,4 +13,4 @@ DATABASES = {
             'NAME': 'ndemo_db',
         }
     }
-
+DATABASES ['default'] = dj_database_url.config ()
