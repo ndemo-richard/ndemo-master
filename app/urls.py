@@ -1,6 +1,7 @@
 from django.urls import path, re_path
 from django.views.static import serve
 from django.conf import settings
+from django.conf.urls import handler404, handler500
 
 from app.views import (
     index,
@@ -11,6 +12,9 @@ from app.views import (
     portfolio,
     portfolio_detail,
     about,
+    handler404,
+    handler500
+    
 )
 
 urlpatterns = [
@@ -24,6 +28,8 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
 ]
 
+handler404 
+handler500 
 if not settings.DEBUG:
     urlpatterns += [
         re_path(r'media/(?P<path>.*)$', serve, {
