@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 
 import os
-import dj_database_url
-import django_heroku
+#import dj_database_url
+#import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -91,14 +91,23 @@ WSGI_APPLICATION = 'ndemo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": 'django.db.backends.postgresql',
-  
-        }
-        }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddt3buquglavsg',
+        'HOST':'ec2-54-235-116-235.compute-1.amazonaws.com',
+        'PORT':'5432',
+        'USER':'ukainddvavnjkc',
+        'PASSWORD':'49970e002192f5e6bccac5faa0e855b0ec2029fcf0f2204618b043a108b1175e'
+    }
+}
+
+'''
+postgres://ukainddvavnjkc:49970e002192f5e6bccac5faa0e855b0ec2029fcf0f2204618b043a108b1175e@ec2-54-235-116-235.compute-1.amazonaws.com:5432/ddt3buquglavsg
+'''
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -150,5 +159,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
