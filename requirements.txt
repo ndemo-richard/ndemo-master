@@ -28,6 +28,7 @@ importlib-metadata==2.0.0
 kombu==5.0.2
 more-itertools==8.5.0
 mots-vides==2015.5.11
+mysqlclient==2.0.3
 Pillow==7.2.0
 prompt-toolkit==3.0.7
 psycopg2==2.8.6
