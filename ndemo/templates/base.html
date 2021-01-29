@@ -28,8 +28,8 @@
 
     <! --CSS
     ======================================================================================-->
-    {% compress css %}
-    <link rel="stylesheet"   href="{% static 'app/bootstrap/css/bootstrap.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/base.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/fonts.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/font-awesome/css/font-awesome.css' %}">
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/materialize.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/vendor.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'app/css/lity.css' %}">
-    {% endcompress %}
+    
 
 </head>
 
@@ -55,7 +55,7 @@
 
 
 <!--Javascript-->
-{% compress js %}
+
 <script src="{% static 'app/js/jquery-2.1.3.min.js' %}"></script>
 <script src="{% static  'app/bootstrap/js/bootstrap.js' %}"></script>
 <script src="{% static 'app/js/modernizr.js' %}"></script>
@@ -66,7 +66,7 @@
 <script src="{% static 'app/js/video-header.js' %}"></script>
 <script src="{% static 'app/js/lity.js' %}"></script>
 <script src="{% static 'app/js/main.js' %}"></script>
-{% endcompress %}
+
 <script>
     $(document).ready(function(){
         $('.header-video').each(function(i, elem){
