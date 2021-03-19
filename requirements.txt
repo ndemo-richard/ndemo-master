@@ -29,7 +29,7 @@ kombu==5.0.2
 more-itertools==8.5.0
 mots-vides==2015.5.11
 mysqlclient==2.0.3
-Pillow==7.2.0
+Pillow==8.1.1
 prompt-toolkit==3.0.7
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
