@@ -16,5 +16,7 @@ create a virtual enviroment to install dependencies in and activate it: <br />
 Then install the dependencies:<br />
 > (env)$pip install -r requirements.txt <br />
 
-once pip has finished downloading dependencies:<br />
->(env)$ python manage.py runserver
+#couple of things you should check to fine tune towards your needs
+You should change the settings file <br />
+uncomment the last line in common.py in settings and the `import django-heroku'
+change the database engine to match your settings
