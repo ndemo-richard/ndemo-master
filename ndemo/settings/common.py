@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 
 import os
-#import dj_database_url
+import dj_database_url
 import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -105,9 +105,12 @@ DATABASES = {
     }
 }
 
-'''
-postgres://ukainddvavnjkc:49970e002192f5e6bccac5faa0e855b0ec2029fcf0f2204618b043a108b1175e@ec2-54-235-116-235.compute-1.amazonaws.com:5432/ddt3buquglavsg
-'''
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation

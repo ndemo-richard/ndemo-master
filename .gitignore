@@ -7,3 +7,4 @@ db.sqlite3
 manage.py
 wsgi.py
 sqlite#
+README.md
