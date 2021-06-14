@@ -17,7 +17,7 @@ Then install the dependencies:<br />
 > (env)$pip install -r requirements.txt <br />
 
 finally run the application using:
->$ python manage.py migrate
+>$ python manage.py migrate <br />
 >$ python manage.py runserver
 
 #couple of things you should check to fine tune towards your needs
